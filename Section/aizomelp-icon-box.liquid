@@ -1,0 +1,187 @@
+<style>
+.id_{{ section.id }}{
+  padding:80px 0px;
+  background-image:url({{section.settings.bg_img | image_url}});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;  
+  position: relative;
+  }
+    
+ .id_{{ section.id }}::after{
+    content: "";
+    position: absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background-color:#000000;
+    opacity: 30%;
+    z-index:0;
+ }   
+.id_{{ section.id }} .container{
+    max-width:1200px;
+    width:100%;
+    margin:0px auto;
+    position: relative;
+    z-index:1;
+}
+
+.id_{{ section.id }} .container .row{
+  display:flex;
+  flex-wrap:wrap;
+  margin:-15px;
+}
+    
+.id_{{ section.id }} .container .row .col{
+  max-width:33.33%;
+  width:100%;
+  box-sizing: border-box;
+  padding:15px;
+}
+    
+.id_{{ section.id }} .title{
+     font-size: 36px;
+    line-height: 130%;
+    font-weight: 500;
+    color: #ffffff;
+    margin:0px 0px 40px 0px;
+    text-align: center; 
+}
+  
+.id_{{ section.id }} .icon_box{
+  
+}
+.id_{{ section.id }} .icon_box img{
+  max-width:20px;
+  width:100%;
+  display:block;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin:0px auto 15px auto;
+}
+.id_{{ section.id }} .icon_box h3{
+     font-size: 20px;
+    line-height: 120%;
+    font-weight: 500;
+    color: #ffffff;
+    margin:0px 0px 10px 0px;
+    text-align: center; 
+}
+.id_{{ section.id }} .icon_box .des{
+       font-size: 16px;
+    line-height: 150%;
+    font-weight: 400;
+    color: #ffffff;
+    margin:0px 0px 0px 0px;
+    text-align: center; 
+}
+
+
+@media(max-width:768px){
+  
+ .id_{{ section.id }}{
+   padding:40px 20px;
+ }
+  
+.id_{{ section.id }} .container .row .col{
+  max-width:100%;
+}
+
+.id_{{ section.id }} .title{
+     font-size: 30px;
+    margin:0px 0px 30px 0px;
+}
+
+  
+}
+  
+</style>
+
+<section class="id_{{ section.id }}">
+  <div class="container">
+    <h2 class="title">{{ section.settings.title }}</h2>
+    <div class="row">
+      {% for block in section.blocks %}
+        {%  case block.type%}
+          {% when "icon_box" %}
+           <div class="col">
+             <div class="icon_box">
+               {% if block.settings.img != blank %}
+                 <img src="{{ block.settings.img | image_url }}" alt="{{ block.settings.img.alt }}" width="100%" height="100%">
+               {% endif %}
+               <h3>{{ block.settings.title }}</h3>
+               <p class="des">{{ block.settings.text }}</p>
+             </div>
+            </div>
+          {% endcase %}
+      {% endfor %}
+    </div>
+    
+    
+  </div>
+</section>
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Aizomelp Icon Box",
+    "settings": [
+            {
+        "type": "image_picker",
+        "label": "Select Backgroung Image",
+        "id": "bg_img"
+      },
+      {
+        "type": "text",
+        "label": "Section Title",
+        "id": "title",
+        "default":"Improve Your Days with the Pillowcase for Restful Nights"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "icon_box",
+        "name":"Icon box",
+        "settings": [
+          {
+            "type": "image_picker",
+            "label": "Select Image",
+            "id": "img"
+          },
+          {
+            "type": "text",
+            "label": "Title",
+            "id": "title",
+            "default":"Improved Sleep Quality"
+          },
+          {
+            "type": "textarea",
+            "label": "Description",
+            "id": "text",
+            "default":"I decided to give organic pillowcases a try, and oh, what a difference it has made!"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Aizomelp Icon Box",
+        "blocks": [
+          {
+            "type": "icon_box",
+          },
+          {
+            "type": "icon_box",
+          },
+          {
+            "type": "icon_box",
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,347 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+    "layout": "theme.aizomelp",
+    "sections": {
+      "main": {
+        "type": "main-page",
+        "disabled": true,
+        "settings": {
+          "padding_top": 36,
+          "padding_bottom": 36
+        }
+      },
+      "zegsu-header-bar": {
+        "type": "apps",
+        "disabled": true,
+        "settings": {
+          "include_margins": true
+        }
+      },
+      "aizomelp_header_edCtFF": {
+        "type": "aizomelp-header",
+        "settings": {
+          "img": "shopify:\/\/shop_images\/472241699419063450-f7ab6f1d-eb60-48f7-aad0-8eb0f604a165.svg",
+          "imglink": "",
+          "img_width": 60,
+          "img_alignment": "0px auto 0px"
+        }
+      },
+      "aizomelp_banner_7AJ3CX": {
+        "type": "aizomelp-banner",
+        "blocks": {
+          "video_mbRtrq": {
+            "type": "video",
+            "settings": {
+              "video_url": "https:\/\/youtu.be\/oQEmQplpUBM",
+              "enable_video_looping": true,
+              "img1": "shopify:\/\/shop_images\/472241699419063450-959bd49c-cc8c-4a7a-bda4-6c3c41fb4d46.gif",
+              "img2": "shopify:\/\/shop_images\/472241699419063450-4c13f221-35d1-4841-ab96-116f9fc77ee5.gif",
+              "img3": "shopify:\/\/shop_images\/472241699419063450-12a27305-c625-4c9a-8c19-f3169b24bdb5.png"
+            }
+          },
+          "content_dxg98J": {
+            "type": "content",
+            "settings": {
+              "title": "Transform Your Sleep",
+              "sub_title": "Aizome All Natural, Organic Pillowcases",
+              "list1": "HEALTHY",
+              "list2": "RESTFUL",
+              "list3": "SUSTAINABLE",
+              "btn_text": "Buy Now",
+              "btn_url": "#"
+            }
+          }
+        },
+        "block_order": [
+          "video_mbRtrq",
+          "content_dxg98J"
+        ],
+        "settings": {
+          "bg_img": "shopify:\/\/shop_images\/472241699419063450-7120e36e-6997-481b-a616-c72679b4791f.jpg",
+          "padding": 120
+        }
+      },
+      "aizomelp_list_icon_box_q3dFTn": {
+        "type": "aizomelp-list-icon-box",
+        "blocks": {
+          "list_box_pn4DaL": {
+            "type": "list_box",
+            "settings": {
+              "number1": "100,000+",
+              "text1": "Happy Customers",
+              "number2": "200+",
+              "text2": "Studies on Benefits",
+              "number3": "1,000+",
+              "text3": "Years of Japanese History"
+            }
+          },
+          "icon_list_4CYxyT": {
+            "type": "icon_list",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/svgexport-2.svg",
+              "text1": "Supports Skin Recovery",
+              "text2": "Naturally Antibacterial",
+              "text3": "Neutralizes Body Odor",
+              "text4": "High Quality",
+              "text5": "Naturally Hypoallergenic"
+            }
+          }
+        },
+        "block_order": [
+          "list_box_pn4DaL",
+          "icon_list_4CYxyT"
+        ],
+        "settings": {
+        }
+      },
+      "aizomelp_image_box_3raQDz": {
+        "type": "aizomelp-image-box",
+        "blocks": {
+          "image_box_6hANi8": {
+            "type": "image_box",
+            "settings": {
+              "img": "shopify:\/\/shop_images\/472241699419063450-4cf8de21-df73-4149-8fbc-8c61323adb3b.jpg",
+              "title": "Improved Sleep Quality",
+              "text": "I decided to give organic pillowcases a try, and oh, what a difference it has made!",
+              "name": "Marion"
+            }
+          },
+          "image_box_g7FgRB": {
+            "type": "image_box",
+            "settings": {
+              "img": "shopify:\/\/shop_images\/472241699419063450-f68612da-ff88-4a56-b925-3dcbb650640d.jpg",
+              "title": "Increased Comfort",
+              "text": "The fabric felt soft and gentle against my skin, and I woke up feeling refreshed",
+              "name": "Sarina"
+            }
+          },
+          "image_box_mnnr46": {
+            "type": "image_box",
+            "settings": {
+              "img": "shopify:\/\/shop_images\/472241699419063450-f0fa5165-f4de-4596-a065-83da96f2e3bb.jpg",
+              "title": "Chemical Free",
+              "text": "The hypoallergenic nature of these organic pillowcases was a game-changer",
+              "name": "Brian"
+            }
+          }
+        },
+        "block_order": [
+          "image_box_6hANi8",
+          "image_box_g7FgRB",
+          "image_box_mnnr46"
+        ],
+        "settings": {
+          "title": "Improve Your Days with the Pillowcase for Restful Nights"
+        }
+      },
+      "aizomelp_table_BGL9Ux": {
+        "type": "aizomelp-table",
+        "blocks": {
+          "table_list_yzW4Rr": {
+            "type": "table_list",
+            "settings": {
+              "title": "Hypoallergenic Properties",
+              "text1": "Gentle on the skin",
+              "text2": "Often contains chemicals"
+            }
+          },
+          "table_list_TzC3KK": {
+            "type": "table_list",
+            "settings": {
+              "title": "Better Sleep Quality",
+              "text1": "Comfortable & restful",
+              "text2": "Often scratchy"
+            }
+          },
+          "table_list_PkaDTD": {
+            "type": "table_list",
+            "settings": {
+              "title": "Promotes Temperature Regulation",
+              "text1": "Cool in summer & warm in winter",
+              "text2": "Constant despite temperature"
+            }
+          },
+          "table_list_DhWNgM": {
+            "type": "table_list",
+            "settings": {
+              "title": "Increases Relaxation and Stress Reduction",
+              "text1": "Color shown to be calming",
+              "text2": "Might be stimulating "
+            }
+          }
+        },
+        "block_order": [
+          "table_list_yzW4Rr",
+          "table_list_TzC3KK",
+          "table_list_PkaDTD",
+          "table_list_DhWNgM"
+        ],
+        "settings": {
+          "title": "Our Pillowcase is Superior to the Competition",
+          "title1": "AIZOME Pillows",
+          "title2": "Traditional Pillows"
+        }
+      },
+      "aizomelp_video_zzLGPm": {
+        "type": "aizomelp-video",
+        "settings": {
+          "video_url": "https:\/\/youtu.be\/oQEmQplpUBM",
+          "enable_video_looping": false
+        }
+      },
+      "aizomelp_text_image_box_DPBQPn": {
+        "type": "aizomelp-text-image-box",
+        "blocks": {
+          "box_BMBnEy": {
+            "type": "box",
+            "settings": {
+              "title": "The answer to your skin issues!",
+              "img": "shopify:\/\/shop_images\/472241699419063450-4c13f221-35d1-4841-ab96-116f9fc77ee5.gif"
+            }
+          },
+          "box_maMDCm": {
+            "type": "box",
+            "settings": {
+              "title": "The best bedding for sensitive skin and allergies.",
+              "img": "shopify:\/\/shop_images\/472241699419063450-959bd49c-cc8c-4a7a-bda4-6c3c41fb4d46.gif"
+            }
+          },
+          "box_xh7wzj": {
+            "type": "box",
+            "settings": {
+              "title": "Sleep worry free.",
+              "img": "shopify:\/\/shop_images\/472241699419063450-8c0d1d18-2cb9-4809-bc73-4cce3dcf363a.gif"
+            }
+          }
+        },
+        "block_order": [
+          "box_BMBnEy",
+          "box_maMDCm",
+          "box_xh7wzj"
+        ],
+        "settings": {
+          "bg_img": "shopify:\/\/shop_images\/472241699419063450-7120e36e-6997-481b-a616-c72679b4791f.jpg"
+        }
+      },
+      "aizomelp_text_image_banner_dV9WAg": {
+        "type": "aizomelp-text-image-banner",
+        "blocks": {
+          "image_t38PFy": {
+            "type": "image",
+            "settings": {
+              "img": "shopify:\/\/shop_images\/472241699419063450-f26396a4-4078-4c4b-a395-73a80302ec72.jpg",
+              "aspect-ratio": "8\/8"
+            }
+          },
+          "content_i3KbpT": {
+            "type": "content",
+            "settings": {
+              "title": "Increased Wellness, Timeless Beauty",
+              "des": "Discover the profound connection between wellness and indigo fabrics. Indigo's natural properties promote better sleep, relaxation, and overall tranquility, enhancing your well-being with every touch. Explore our collection to experience the benefits of indigo-dyed textiles in your daily life."
+            }
+          }
+        },
+        "block_order": [
+          "image_t38PFy",
+          "content_i3KbpT"
+        ],
+        "settings": {
+        }
+      },
+      "aizomelp_icon_box_9JTqHB": {
+        "type": "aizomelp-icon-box",
+        "blocks": {
+          "icon_box_XJpe3r": {
+            "type": "icon_box",
+            "settings": {
+              "img": "shopify:\/\/shop_images\/svgexport-2.svg",
+              "title": "Relaxation and Stress Reduction",
+              "text": "The calming and serene colors associated with indigo can have a soothing effect on the mind. Sleeping in an environment with tranquil colors may help reduce stress and promote relaxation, leading to more peaceful slumber."
+            }
+          },
+          "icon_box_4PxG3Y": {
+            "type": "icon_box",
+            "settings": {
+              "img": "shopify:\/\/shop_images\/svgexport-2.svg",
+              "title": "Better Sleep Quality",
+              "text": "Indigo-dyed fabrics are often made from organic materials that are gentle on the skin. The soft and breathable nature of these fabrics can lead to improved comfort and, in turn, better sleep quality."
+            }
+          },
+          "icon_box_p3Bxj7": {
+            "type": "icon_box",
+            "settings": {
+              "img": "shopify:\/\/shop_images\/svgexport-2.svg",
+              "title": "Improved Temperature Regulation",
+              "text": "Indigo-dyed fabrics are excellent at regulating temperature. They help keep you cool in warm weather and warm in cold weather, ensuring a comfortable sleep throughout the year."
+            }
+          }
+        },
+        "block_order": [
+          "icon_box_XJpe3r",
+          "icon_box_4PxG3Y",
+          "icon_box_p3Bxj7"
+        ],
+        "settings": {
+          "bg_img": "shopify:\/\/shop_images\/472241699419063450-7120e36e-6997-481b-a616-c72679b4791f.jpg",
+          "title": "Unlock Your Perfect Sleep Experience"
+        }
+      },
+      "aizomelp_text_image_banner_G9Qmph": {
+        "type": "aizomelp-text-image-banner",
+        "blocks": {
+          "content_fLHVKw": {
+            "type": "content",
+            "settings": {
+              "title": "Discover Thread-Born Tranquility",
+              "des": "We've Carefully Curated A Range Of Organic Textiles Dyed With All-Natural Ingredients, Such As Indigo And Medicinal Herbs, To Bring You A Sense Of Profound Grace Associated With The Natural World."
+            }
+          },
+          "image_tKeXhX": {
+            "type": "image",
+            "settings": {
+              "img": "shopify:\/\/shop_images\/472241699419063450-1e869a99-c264-4adb-b0f3-977a6e94afe4.jpg",
+              "aspect-ratio": "8\/8"
+            }
+          }
+        },
+        "block_order": [
+          "content_fLHVKw",
+          "image_tKeXhX"
+        ],
+        "settings": {
+        }
+      },
+      "aizomelp_footer_kkN6dC": {
+        "type": "aizomelp-footer",
+        "settings": {
+          "bg_img": "shopify:\/\/shop_images\/472241699419063450-7120e36e-6997-481b-a616-c72679b4791f.jpg",
+          "title": "Experience Tranquility Every Night",
+          "img": "shopify:\/\/shop_images\/472241699419063450-f7ab6f1d-eb60-48f7-aad0-8eb0f604a165.svg"
+        }
+      }
+    },
+    "order": [
+      "main",
+      "zegsu-header-bar",
+      "aizomelp_header_edCtFF",
+      "aizomelp_banner_7AJ3CX",
+      "aizomelp_list_icon_box_q3dFTn",
+      "aizomelp_image_box_3raQDz",
+      "aizomelp_table_BGL9Ux",
+      "aizomelp_video_zzLGPm",
+      "aizomelp_text_image_box_DPBQPn",
+      "aizomelp_text_image_banner_dV9WAg",
+      "aizomelp_icon_box_9JTqHB",
+      "aizomelp_text_image_banner_G9Qmph",
+      "aizomelp_footer_kkN6dC"
+    ]
+  }
+  

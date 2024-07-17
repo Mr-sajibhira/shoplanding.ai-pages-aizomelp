@@ -1,0 +1,192 @@
+<style>
+.id_{{ section.id }}{
+   background-color:#ffffff;
+}
+
+ 
+.id_{{ section.id }} .container{
+  max-width:1200px;
+  width:100%;
+  margin:0px auto;
+}
+  
+.id_{{ section.id }} .title{
+    font-size: 36px;
+    line-height: 130%;
+    font-weight: 500;
+    color: #000000;
+    margin:0px 0px 0px 0px;
+    text-align: center; 
+}  
+  
+.id_{{ section.id }} .table_box{
+   padding:40px 60px;
+   background-color:#efecec;
+ }
+  
+.id_{{ section.id }} .table_row{
+  display:flex;
+  margin:-10px;
+  height:auto;
+
+}
+
+.id_{{ section.id }} .table_row:last-child .col{
+  border:none;
+}
+
+  
+.id_{{ section.id }} .table_row .col{
+  max-width:33.33%;
+  width:100%;
+  box-sizing: border-box;
+  padding:20px 10px;
+  border-bottom: 1px solid #cecece;
+  align-items: center;
+   display:flex;
+  height:auto;
+  
+}
+.id_{{ section.id }} .table_row h3{
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 600;
+    color: #000000;
+    margin:0px 0px 0px 0px;
+} 
+.id_{{ section.id }} .table_row p{
+    font-size: 15px;
+    line-height: 150%;
+    font-weight: 400;
+    color: #555555;
+    margin:0px 0px 0px 0px;
+} 
+
+
+
+
+
+  
+@media(max-width:768px){
+
+  
+  .id_{{ section.id }} .title{
+     font-size: 30px;
+}
+
+.id_{{ section.id }} .table_row{
+  flex-wrap: nowrap;
+   padding:0px 0px;
+   margin:-10px;
+}
+.id_{{ section.id }} .table_row .col{
+    flex-shrink:0;
+    flex-basis: 70%;
+    flex-grow: 0;
+   max-width:100%;
+  
+ }
+.id_{{ section.id }} .table_body{
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.id_{{ section.id }} .table_box{
+   padding:40px 20px;
+   background-color:#efecec;
+ }
+    
+
+  
+}
+
+  
+</style>
+
+
+<section class="id_{{ section.id }}">
+  <div class="container">
+    <div class="table_box">
+      <h2 class="title">{{ section.settings.title }}</h2>
+       <div class="table_body">
+          <div class="table_row">
+             <div class="col"><h3 style="color:transparent;">.</h3> </div>
+             <div class="col"> <h3>{{ section.settings.title1 }}</h3></div>
+             <div class="col"> <h3>{{ section.settings.title2 }}</h3></div>
+          </div>
+         {% for block in section.blocks %}
+           {% case block.type %}
+             {% when "table_list" %}
+               <div class="table_row">
+                    <div class="col"><h3>{{ block.settings.title }} </h3></div>
+                    <div class="col"> <p>{{ block.settings.text1 }}</p></div>
+                   <div class="col"> <p>{{ block.settings.text2 }}</p></div>
+               </div>
+             {% endcase %}
+         {% endfor %}
+       </div>
+      
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Aizomelp Table",
+    "settings": [
+      {
+        "type": "text",
+        "label": "Section Title",
+        "id": "title",
+        "default":"Our Pillowcase is Superior to the Competition"
+      },
+      {
+        "type": "text",
+        "label": "Table Title 1",
+        "id": "title1",
+        "default":"AIZOME Pillows"
+      },
+       {
+        "type": "text",
+        "label": "Table Title 2",
+        "id": "title2",
+        "default":"Traditional Pillows"
+      }     
+    ],
+    "blocks": [
+      {
+        "type": "table_list",
+        "name":"Table List",
+        "settings": [
+      {
+        "type": "text",
+        "label": "Title",
+        "id": "title",
+        "default":"Hypoallergenic Properties"
+      },
+      {
+        "type": "text",
+        "label": "Table Text 1",
+        "id": "text1",
+        "default":"Gentle on the skin"
+      },
+       {
+        "type": "text",
+        "label": "Table Text 2",
+        "id": "text2",
+        "default":"Often contains chemicals"
+      }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Aizomelp Table"
+      }
+    ]
+  }
+{% endschema %}

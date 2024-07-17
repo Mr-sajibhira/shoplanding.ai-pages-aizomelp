@@ -1,0 +1,363 @@
+
+<style>
+.id_{{ section.id }}{
+  padding:220px 0px 120px;
+  background-image:url({{section.settings.bg_img | image_url}});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;  
+  position: relative;
+  }
+ .id_{{ section.id }}::after{
+    content: "";
+    position: absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background-color:#000000;
+    opacity: 40%;
+    z-index:0;
+ }   
+.id_{{ section.id }} .container{
+    max-width:1200px;
+    width:100%;
+    margin:0px auto;
+    position: relative;
+    z-index:1;
+}
+    
+.id_{{ section.id }} .container .row{
+    display:flex;
+    flex-wrap:wrap;
+    margin:-20px;
+    align-items:center;
+}
+    
+.id_{{ section.id }} .container .row .col{
+    max-width:50%;
+    width:100%;
+    box-sizing: border-box;
+    padding:20px;
+}
+
+.id_{{ section.id }} .video_div iframe{  
+    width:100%;
+    height:100%; 
+    aspect-ratio: 16/9;
+}
+
+.id_{{ section.id }} .img_div{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:40px 0px 0px 0px;
+}
+.id_{{ section.id }} .img_div img{
+    max-width:30%;
+    width:100%;
+    display:block;
+    object-fit:contain;
+    height:40px;
+}   
+.id_{{ section.id }}  .content{
+    text-align: center; 
+}
+.id_{{ section.id }}  .content h2{
+    font-size: 48px;
+    line-height: 120%;
+    font-weight: 700;
+    color: #efecec;
+    margin:0px 0px 16px 0px;
+}
+.id_{{ section.id }}  .content h3{
+    font-size: 40px;
+    line-height: 120%;
+    font-weight: 400;
+    color: #efecec;
+    margin:0px 0px 16px 0px;
+}  
+.id_{{ section.id }}  .content .list{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin:0px 0px 30px 0px;
+}
+.id_{{ section.id }} .content .list_item{
+    padding:0px 20px; 
+}
+.id_{{ section.id }} .content .list_item.border{
+  border:solid #efecec;
+  border-width:0px 2px 0px 2px;
+}
+.id_{{ section.id }} .content h4{
+    font-size: 18px;
+    line-height: 150%;
+    font-weight: 400;
+    color: #efecec;
+    margin:0px 0px 0px 0px;      
+}
+.id_{{ section.id }}  .content .btn{
+    display: inline-block;
+    text-decoration: none;
+    transition-duration:.3s;
+    background-color: transparent;
+    color:#ffffff;
+     padding: 8px 24px;
+    border: 1px solid #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%;
+}
+.id_{{ section.id }}  .content .btn:hover{
+    background-color: #ffffff;
+    color:#000000;
+}
+
+ @media(max-width:768px){
+   
+  .id_{{ section.id }}  .content h2{ font-size: 38px;}
+  .id_{{ section.id }}  .content h3{ font-size: 25px;}
+  .id_{{ section.id }}  .content h4{ font-size: 14px;}
+  .id_{{ section.id }} .container .row {
+    margin:-20px 0px;
+  }
+  .id_{{ section.id }} .container .row .col{ 
+    max-width:100%;
+    padding:20px 0px;
+  }
+  .id_{{ section.id }} .img_div{display:none;}
+  .id_{{ section.id }}{
+    padding:60px 0px 50px;
+   }
+  
+ }   
+</style>
+
+<section class="id_{{ section.id }}">
+  <div class="container">
+    <div class="row">
+
+     {% for block in section.blocks %}
+         {%liquid  
+            assign video_url =  block.settings.video_url
+            assign video =  block.settings.video
+            assign enable_video_looping =  block.settings.enable_video_looping
+          assign video_id = block.settings.video.id | default: block.settings.video_url.id
+
+          %}
+       {% case block.type %}
+         {% when 'video' %}
+
+         
+            <div class="col">
+               <div class="video_div">
+              {%- if video == null and video_url != null -%}
+                {%- liquid
+                  assign loop = ''
+                  if enable_video_looping
+                    assign loop = '&loop=1&playlist=' | append: video_id
+                  endif
+                -%}
+                {%- if video_url.type == 'youtube' -%}
+                  <iframe
+                    src="https://www.youtube.com/embed/{{ video_id }}?enablejsapi=1&autoplay=1{{ loop }}"
+                    class="js-youtube"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen
+                    title="{{ content | escape }}"
+                  ></iframe>
+                {%- else -%}
+                  <iframe
+                    src="https://player.vimeo.com/video/{{ video_id }}?autoplay=1{{ loop }}"
+                    class="js-vimeo"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen
+                    title="{{ content | escape }}"
+                  ></iframe>
+                {%- endif -%}
+              {%- else -%}
+                {{
+                  block.settings.video
+                  | video_tag:
+                    image_size: '1100x',
+                    autoplay: true,
+                    loop: enable_video_looping,
+                    controls: true,
+                    muted: false
+                }}
+              {%- endif -%}
+            </div>   
+
+              <div class="img_div">
+                {% if block.settings.img1 != blank %}
+                   <img src="{{ block.settings.img1 | image_url }}" alt="{{ block.settings.img1.alt }}" width="100%" height="100%">
+                {% endif %}
+                {% if block.settings.img2 != blank %}
+                   <img src="{{ block.settings.img2 | image_url }}" alt="{{ block.settings.img2.alt }}" width="100%" height="100%">
+                {% endif %}
+                {% if block.settings.img3 != blank %}
+                    <img src="{{ block.settings.img3 | image_url }}" alt="{{ block.settings.img3.alt }}" width="100%" height="100%">
+                {% endif %}
+              </div>
+
+              
+        </div>   <!-- col end -->
+
+         {% when 'content' %}
+                
+            <div class="col">
+               <div class="content">
+                 <h2>{{ block.settings.title }}</h2>
+                 <h3>{{ block.settings.sub_title }}</h3>
+                 <div class="list">
+                   <div class="list_item"><h4>{{ block.settings.list1 }}</h4></div>
+                    <div class="list_item border"><h4>{{ block.settings.list2 }}</h4></div>
+                    <div class="list_item"><h4>{{ block.settings.list3 }}</h4></div>
+                 </div>
+                  {% if block.settings.btn_url != blank %}
+                 <a class="btn" href="{{ block.settings.btn_url }}">{{ block.settings.btn_text }}</a>
+                {% endif %}
+              </div>
+                
+            </div> <!-- col end -->
+         
+         {% endcase %}
+       {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+
+
+{% schema %}
+  {
+    "name": "Aizomelp Banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "label": "Select Backgroung Image",
+        "id": "bg_img"
+      },
+      {
+        "type": "header",
+        "content": "Section Padding"
+      },
+      {
+        "type": "range",
+        "label": "Padding",
+        "id": "padding",
+        "min": 0,
+        "max": 200,
+        "unit": "px",
+        "step": 2,
+        "default":120
+      }
+    ],
+    "blocks": [
+      {
+        "type": "video",
+        "name":"Video",
+        "limit": 1,
+        "settings": [
+          {
+              "type": "video_url",
+              "id": "video_url",
+              "accept": ["youtube", "vimeo"],
+              "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+              "label": "t:sections.video.settings.video_url.label",
+              "info": "t:sections.video.settings.video_url.info"
+            },
+            {
+            "type": "video",
+            "id": "video",
+            "label": "t:sections.video.settings.video.label"
+          },
+          {
+            "type": "checkbox",
+            "id": "enable_video_looping",
+            "label": "t:sections.video.settings.enable_video_looping.label",
+            "default": false
+          },
+          {
+            "type": "image_picker",
+            "label": "Image Select 1",
+            "id": "img1"
+          },
+          {
+            "type": "image_picker",
+            "label": "Image Select 2",
+            "id": "img2"
+          },
+          {
+            "type": "image_picker",
+            "label": "Image Select 3",
+            "id": "img3"
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "name":"Section Content",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "label": "Title",
+            "id": "title",
+            "default":"Transform Your Sleep"
+          },
+          {
+            "type": "text",
+            "label": "Sub Title",
+            "id": "sub_title",
+            "default":"Aizome All Natural, Organic Pillowcases"
+          },
+          {
+            "type": "text",
+            "label": "List 1",
+            "id": "list1",
+            "default":"HEALTHY"
+          },
+          {
+            "type": "text",
+            "label": "List 2",
+            "id": "list2",
+            "default":"RESTFUL"
+          },
+          {
+            "type": "text",
+            "label": "List 3",
+            "id": "list3",
+            "default":"SUSTAINABLE"
+          },
+          {
+            "type": "text",
+            "label": "Button Text",
+            "id": "btn_text",
+            "default":"Buy Now"
+          },
+          {
+            "type": "url",
+            "label": "Button Url",
+            "id": "btn_url"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+      "name": "Aizomelp Banner",
+      "blocks": [
+          {
+            "type": "video"
+          },
+          {
+            "type": "content"
+          }
+      ]
+      }
+    ]
+  }
+{% endschema %}
